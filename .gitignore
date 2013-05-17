@@ -1,0 +1,33 @@
+
+# Ignore bundler config
+/.bundle
+
+# Ignore database configurations
+/config/database.yml
+
+# Ignore all logfiles and tempfiles.
+/log/*.log
+/tmp
+*.gem
+*/**/.DS_Store
+*/.DS_Store
+.autotest
+.DS_STORE
+.eprj
+.project
+.rvmrc
+.rspec
+.powrc
+.sass-cache/
+.bundler_stubs
+.directory
+.kate-swp
+.lock
+*.swp
+*.un~
+app/assets/images/tmp/**/*
+app/assets/images/uploads/**/*
+config/*.sphinx.conf
+config/database.yml
+public/uploads/*
+coverage
