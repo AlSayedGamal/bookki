@@ -77,6 +77,12 @@ GEM
     forgery (0.5.0)
     gherkin (2.11.8)
       multi_json (~> 1.3)
+    haml (3.1.8)
+    haml-rails (0.3.4)
+      actionpack (~> 3.0)
+      activesupport (~> 3.0)
+      haml (~> 3.0)
+      railties (~> 3.0)
     hike (1.2.2)
     i18n (0.6.1)
     journey (1.0.4)
@@ -174,6 +180,7 @@ DEPENDENCIES
   devise (~> 2.2.4)
   factory_girl_rails (= 3.5.0)
   forgery (= 0.5.0)
+  haml-rails (= 0.3.4)
   jquery-rails
   letsrate (~> 1.0.8)
   mysql2

@@ -6,8 +6,9 @@ gem 'rails', '3.2.13'
 # gem 'rails', :git => 'git://github.com/rails/rails.git'
 
 gem 'mysql2'
-gem 'letsrate', '~> 1.0.8'
-gem 'devise',   '~> 2.2.4'
+gem 'letsrate',   '~> 1.0.8'
+gem 'devise',     '~> 2.2.4'
+gem 'haml-rails', '0.3.4'
 
 
 # Gems used only for assets and not required
