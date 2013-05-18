@@ -26,35 +26,36 @@
             %span.icon-bar
             %span.icon-bar
           %a.brand(href="#") Bookki
-          .container.nav-collapse
+          .nav-collapse
             %ul.nav
-              %li= link_to "Books", books_path
-          - if current_user.present?
-            .nav.pull-right.user-corner
-              %li.user-handler.dropdown
-                = link_to '#', class: 'dropdown-toggle', id: "user_dropdown_menu", data: { toggle: :dropdown } do
-                  = current_user.email
-                  %b.caret
-                %ul.dropdown-menu
-                  %li
-                    = link_to "logout", destroy_user_session_path, method: :delete
+              %li= link_to "Books", books_path if current_user.present?
+            - if current_user.present?
+              .nav.pull-right.user-corner
+                %li.user-handler.dropdown
+                  = link_to '#', class: 'dropdown-toggle', id: "user_dropdown_menu", data: { toggle: :dropdown } do
+                    = current_user.email
+                    %b.caret
+                  %ul.dropdown-menu
+                    %li
+                      = link_to "logout", destroy_user_session_path, method: :delete
                 
     .container-fluid
 
       .row-fluid
         .span3
-          .well.sidebar-nav
-            %ul.nav.nav-list
-              %li.nav-header Sidebar
-              %li
-                = link_to books_path do
-                  %i.icon-th-list
-                  Books
+          - if current_user.present?
+            .well.sidebar-nav
+              %ul.nav.nav-list
+                %li.nav-header Sidebar
+                %li
+                  = link_to books_path do
+                    %i.icon-th-list
+                    Books
 
-              %li
-                = link_to new_book_path do
-                  %i.icon-plus
-                  New Book
+                %li
+                  = link_to new_book_path do
+                    %i.icon-plus
+                    New Book
         .span9
           = bootstrap_flash
           = yield
