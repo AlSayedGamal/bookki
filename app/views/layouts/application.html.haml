@@ -29,6 +29,7 @@
           .nav-collapse
             %ul.nav
               %li= link_to "Books", books_path if current_user.present?
+              %li= link_to "Your Readings", user_books_path(current_user) if current_user.present?
             - if current_user.present?
               .nav.pull-right.user-corner
                 %li.user-handler.dropdown

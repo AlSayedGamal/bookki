@@ -12,4 +12,8 @@ class Book < ActiveRecord::Base
       errors.add(:isbn, "length must be 10 or 13") 
     end
   end
+
+  def overall_rating=(stars)
+    rating_rates.update_all stars: stars
+  end
 end

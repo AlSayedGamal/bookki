@@ -3,7 +3,7 @@ class BooksController < ApplicationController
   # GET /books
   # GET /books.json
   def index
-    @books = Book.all
+    @books = (params[:user_id].present?) ? User.find(params[:user_id]).books : Book.all
 
     respond_to do |format|
       format.html # index.html.erb
