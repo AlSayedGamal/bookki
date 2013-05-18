@@ -28,10 +28,8 @@
           %a.brand(href="#") Bookki
           .container.nav-collapse
             %ul.nav
-              %li= link_to "Link 1", "/path1"
-              %li= link_to "Link 2", "/path2"
-              %li= link_to "Link 3", "/path3"
-
+              %li= link_to "Books", books_path
+              
     .container-fluid
 
       .row-fluid
@@ -39,9 +37,15 @@
           .well.sidebar-nav
             %ul.nav.nav-list
               %li.nav-header Sidebar
-              %li= link_to "Link 1", "/path1"
-              %li= link_to "Link 2", "/path2"
-              %li= link_to "Link 3", "/path3"
+              %li
+                = link_to books_path do
+                  %i.icon-th-list
+                  Books
+
+              %li
+                = link_to new_book_path do
+                  %i.icon-plus
+                  New Book
         .span9
           = bootstrap_flash
           = yield
