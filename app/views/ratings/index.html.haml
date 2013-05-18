@@ -1,0 +1,16 @@
+%h2
+  - if @user.present?
+    = "#{@user.username.humanize} ratings"
+  - else
+    Latest Ratings
+%hr
+.ratings
+  - @ratings.each do |rating|
+    = User.find(rating.rater).username
+    rated
+    = link_to rating.book.title, rating.book
+    = "#{rating.stars.to_i} / 5"
+    = "#{time_ago_in_words(rating.created_at)} ago"
+    %br
+    - if current_user.admin?
+      Action!
