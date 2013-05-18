@@ -5,12 +5,16 @@
   %thead
     %tr
       %th= model_class.human_attribute_name(:id)
+      %th= model_class.human_attribute_name(:title)
+      %th= model_class.human_attribute_name(:isbn)
       %th= model_class.human_attribute_name(:created_at)
       %th=t '.actions', :default => t("helpers.actions")
   %tbody
     - @books.each do |book|
       %tr
         %td= link_to book.id, book_path(book)
+        %td= book.title
+        %td= book.isbn
         %td=l book.created_at
         %td
           = link_to t('.edit', :default => t("helpers.links.edit")), edit_book_path(book), :class => 'btn btn-mini'

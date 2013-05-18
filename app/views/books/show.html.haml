@@ -2,6 +2,14 @@
 .page-header
   %h1=t '.title', :default => model_class.model_name.human
 
+%p
+  %strong= model_class.human_attribute_name(:title) + ':'
+  %br
+  = @book.title
+%p
+  %strong= model_class.human_attribute_name(:isbn) + ':'
+  %br
+  = @book.isbn
 
 .form-actions
   = link_to t('.back', :default => t("helpers.links.back")), books_path, :class => 'btn'
