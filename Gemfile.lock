@@ -30,8 +30,6 @@ GEM
       multi_json (~> 1.0)
     arel (3.0.2)
     bcrypt-ruby (3.0.1)
-    bootstrap-sass (2.3.1.0)
-      sass (~> 3.2)
     builder (3.0.4)
     capybara (2.1.0.beta1)
       mime-types (>= 1.16)
@@ -77,6 +75,12 @@ GEM
     forgery (0.5.0)
     gherkin (2.11.8)
       multi_json (~> 1.3)
+    haml (3.1.8)
+    haml-rails (0.3.4)
+      actionpack (~> 3.0)
+      activesupport (~> 3.0)
+      haml (~> 3.0)
+      railties (~> 3.0)
     hike (1.2.2)
     i18n (0.6.1)
     journey (1.0.4)
@@ -85,6 +89,7 @@ GEM
       thor (>= 0.14, < 2.0)
     json (1.8.0)
     letsrate (1.0.8)
+    libv8 (3.11.8.17)
     mail (2.5.4)
       mime-types (~> 1.16)
       treetop (~> 1.4.8)
@@ -119,6 +124,7 @@ GEM
     rake (10.0.4)
     rdoc (3.12.2)
       json (~> 1.4)
+    ref (1.0.4)
     rspec-core (2.12.2)
     rspec-expectations (2.12.1)
       diff-lcs (~> 1.1.3)
@@ -131,11 +137,6 @@ GEM
       rspec-expectations (~> 2.12.0)
       rspec-mocks (~> 2.12.0)
     rubyzip (0.9.9)
-    sass (3.2.9)
-    sass-rails (3.2.6)
-      railties (~> 3.2.0)
-      sass (>= 3.1.10)
-      tilt (~> 1.3)
     selenium-webdriver (2.32.1)
       childprocess (>= 0.2.5)
       multi_json (~> 1.0)
@@ -146,11 +147,18 @@ GEM
       multi_json (~> 1.0)
       rack (~> 1.0)
       tilt (~> 1.1, != 1.3.0)
+    therubyracer (0.11.4)
+      libv8 (~> 3.11.8.12)
+      ref
     thor (0.18.1)
     tilt (1.4.1)
     treetop (1.4.12)
       polyglot
       polyglot (>= 0.3.1)
+    twitter-bootstrap-rails (2.2.6)
+      actionpack (>= 3.1)
+      execjs
+      railties (>= 3.1)
     tzinfo (0.3.37)
     uglifier (2.1.0)
       execjs (>= 0.3.0)
@@ -165,7 +173,6 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
-  bootstrap-sass (~> 2.3.1.0)
   capybara (= 2.1.0.beta1)
   cucumber (= 1.2.5)
   cucumber-rails (= 1.3.1)
@@ -174,11 +181,13 @@ DEPENDENCIES
   devise (~> 2.2.4)
   factory_girl_rails (= 3.5.0)
   forgery (= 0.5.0)
+  haml-rails (= 0.3.4)
   jquery-rails
   letsrate (~> 1.0.8)
   mysql2
   rails (= 3.2.13)
   rspec-rails (= 2.12.2)
-  sass-rails (~> 3.2)
   selenium-webdriver
+  therubyracer
+  twitter-bootstrap-rails
   uglifier (>= 1.0.3)
