@@ -5,7 +5,7 @@ Bookki::Application.routes.draw do
 
   devise_for :users
   resources :books
-
+  resources :ratings
   resources :users do
     resources :books
     resources :ratings
