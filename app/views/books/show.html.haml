@@ -18,7 +18,8 @@
   Rated by:
 %ul
   - @book.rating_raters.each do |user|
-    %li= link_to user.email, user
+    %li
+      = link_to user.username, [user, :ratings]
 - if current_user.admin?
   .form-actions
     = link_to t('.back', :default => t("helpers.links.back")), books_path, :class => 'btn'

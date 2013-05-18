@@ -8,7 +8,7 @@ class User < ActiveRecord::Base
   #Rating
   letsrate_rater
   # Setup accessible (or protected) attributes for your model
-  attr_accessible :email, :password, :password_confirmation, :remember_me
+  attr_accessible :email, :password, :password_confirmation, :remember_me, :username
   # attr_accessible :title, :body
 
   def admin?

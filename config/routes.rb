@@ -1,12 +1,14 @@
 Bookki::Application.routes.draw do
 
   match '/rate' => 'rater#create', :as => 'rate'
+  match "/ratings" => 'ratings#index', :as => 'ratings'
 
   devise_for :users
   resources :books
 
   resources :users do
     resources :books
+    resources :ratings
   end
 
 
