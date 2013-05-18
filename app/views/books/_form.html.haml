@@ -1,9 +1,12 @@
+- @book.errors.full_messages.each do |msg|
+  .alert
+    = msg
 = form_for @book, :html => { :class => 'form-horizontal' } do |f|
-  .control-group
+  .control-group{class: ('error' if f.object.errors[:title].any?)}
     = f.label :title, :class => 'control-label'
     .controls
       = f.text_field :title, :class => 'text_field'
-  .control-group
+  .control-group{class: ('error' if f.object.errors[:isbn].any?)}
     = f.label :isbn, :class => 'control-label'
     .controls
       = f.text_field :isbn, :class => 'text_field'

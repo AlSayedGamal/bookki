@@ -10,7 +10,10 @@
   %strong= model_class.human_attribute_name(:isbn) + ':'
   %br
   = @book.isbn
-
+%p
+  %strong= model_class.human_attribute_name(:rating) + ':'
+  %br
+  = rating_for @book, "rating" 
 .form-actions
   = link_to t('.back', :default => t("helpers.links.back")), books_path, :class => 'btn'
   = link_to t('.edit', :default => t("helpers.links.edit")), edit_book_path(@book), :class => 'btn'
