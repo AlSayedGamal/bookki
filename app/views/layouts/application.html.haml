@@ -29,7 +29,16 @@
           .container.nav-collapse
             %ul.nav
               %li= link_to "Books", books_path
-              
+          - if current_user.present?
+            .nav.pull-right.user-corner
+              %li.user-handler.dropdown
+                = link_to '#', class: 'dropdown-toggle', id: "user_dropdown_menu", data: { toggle: :dropdown } do
+                  = current_user.email
+                  %b.caret
+                %ul.dropdown-menu
+                  %li
+                    = link_to "logout", destroy_user_session_path, method: :delete
+                
     .container-fluid
 
       .row-fluid

@@ -31,3 +31,4 @@ config/*.sphinx.conf
 config/database.yml
 public/uploads/*
 coverage
+routes.txt
