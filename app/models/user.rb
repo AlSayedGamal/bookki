@@ -7,8 +7,12 @@ class User < ActiveRecord::Base
 
   #Rating
   letsrate_rater
+
+  #Validation
+  validates :username, uniqueness: true
+  
   # Setup accessible (or protected) attributes for your model
-  attr_accessible :email, :password, :password_confirmation, :remember_me, :username
+  attr_accessible :email, :password, :password_confirmation, :remember_me, :username, :admin
   # attr_accessible :title, :body
 
   def admin?

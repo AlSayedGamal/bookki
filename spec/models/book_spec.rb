@@ -23,10 +23,10 @@ describe Book do
   end
 
   it "should keep the average of ratings" do
-    book = Factory.create :book
-    user1 = Factory.create :user
-    user2 = Factory.create :user
-    user3 = Factory.create :user
+    book = FactoryGirl.create :book
+    user1 = FactoryGirl.create :user
+    user2 = FactoryGirl.create :user
+    user3 = FactoryGirl.create :user
     book.rate 3, user1.id, "rating"
     book.rate 1, user2.id, "rating"
     book.rate 2, user3.id, "rating"
