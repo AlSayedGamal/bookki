@@ -12,7 +12,9 @@
           = link_to rating.rater.username, [rating.rater, :ratings]
           rated
           = link_to rating.book.title, rating.book
-          = "#{rating.stars.to_i} / 5"
-          .pull-right= "#{time_ago_in_words(rating.created_at)} ago"
+          .star{data:{readOnly: "true", rating: rating.stars, classname: "Book", dimension: "Rating"}, "data-star-count" => 5}
+          %td
+            .pull-right= "#{time_ago_in_words(rating.created_at)} ago"
           - if current_user.admin?
-            = link_to "Edit", edit_rating_path(rating)
+            %td
+              .pull-right= link_to "Edit", edit_rating_path(rating)
