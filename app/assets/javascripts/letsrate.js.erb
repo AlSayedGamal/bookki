@@ -2,7 +2,10 @@ $.fn.raty.defaults.path = "/assets";
 $.fn.raty.defaults.half_show = true;  
  
 $(function(){ 
-	$(".star").raty({			       
+	$(".star").raty({
+		readOnly: function(){
+			return $(this).attr('data-readOnly') == "true"
+		},
 		score: function(){
 			return $(this).attr('data-rating')				
 		}, 

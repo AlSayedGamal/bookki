@@ -28,7 +28,9 @@
           %a.brand(href="#") Bookki
           .nav-collapse
             %ul.nav
-              %li= link_to "Books", books_path if current_user.present?
+              %li= link_to "Explore", books_path if current_user.present?
+              %li= link_to "Latest Ratings", ratings_path if current_user.present?
+              
             - if current_user.present?
               .nav.pull-right.user-corner
                 %li.user-handler.dropdown
@@ -48,10 +50,14 @@
               %ul.nav.nav-list
                 %li.nav-header Sidebar
                 %li
-                  = link_to books_path do
+                  = link_to user_books_path(current_user) do
                     %i.icon-th-list
-                    Books
+                    Your Readings
 
+                %li
+                  = link_to [current_user, :ratings] do
+                    %i.icon-star
+                    Your Ratings
                 %li
                   = link_to new_book_path do
                     %i.icon-plus
@@ -60,8 +66,6 @@
           = bootstrap_flash
           = yield
     
-      %footer
-        %p &copy; Company 2013
     /
       Javascripts
       \==================================================
