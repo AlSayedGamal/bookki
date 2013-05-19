@@ -3,8 +3,7 @@ class Book < ActiveRecord::Base
   letsrate_rateable "rating"
 
   validate :check_length
-  validates :isbn, :numericality => { :only_integer => true }
-  validates :isbn, :uniqueness => true
+  validates :isbn, :numericality => { :only_integer => true }, :uniqueness => true
   validates :title, :presence => true
 
   def check_length
