@@ -22,4 +22,8 @@ class User < ActiveRecord::Base
     end
     return books
   end
+
+  def rating_for(book)
+    ratings_given.where(rateable_id: book.id, rateable_type: book.class.name).first
+  end
 end

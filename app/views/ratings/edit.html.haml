@@ -3,7 +3,7 @@
 Rated
 = link_to @rate.book.title, @rate.book
 = form_for @rate, url: rating_path do |f|
-  = f.select :stars, [1,2,3,4,5]
+  = f.select :stars, options_for_select([1,2,3,4,5], @rate.stars.to_i)
   \/ 5
   .form-actions
     = f.submit nil, :class => 'btn btn-primary'

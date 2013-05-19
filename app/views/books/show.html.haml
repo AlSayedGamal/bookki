@@ -20,6 +20,7 @@
   - @book.rating_raters.each do |user|
     %li
       = link_to user.username, [user, :ratings]
+      .star{data:{readOnly: "true", rating: user.rating_for(@book).stars, classname: "Book", dimension: "Rating"}, "data-star-count" => 5}
 - if current_user.admin?
   .form-actions
     = link_to t('.back', :default => t("helpers.links.back")), books_path, :class => 'btn'
