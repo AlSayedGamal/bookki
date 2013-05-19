@@ -9,6 +9,8 @@ gem 'mysql2'
 gem 'letsrate',   '~> 1.0.8'
 gem 'devise',     '~> 2.2.4'
 gem 'haml-rails', '0.3.4'
+gem 'kaminari',   '~> 0.14.1'
+
 
 
 # Gems used only for assets and not required

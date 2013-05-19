@@ -5,12 +5,14 @@
     Latest Ratings
 %hr
 .ratings
-  - @ratings.each do |rating|
-    = rating.rater.username
-    rated
-    = link_to rating.book.title, rating.book
-    = "#{rating.stars.to_i} / 5"
-    = "#{time_ago_in_words(rating.created_at)} ago"
-    - if current_user.admin?
-      = link_to "Edit", edit_rating_path(rating)
-    %br
+  %table.table.table-striped
+    -@ratings.each do |rating|
+      %tr
+        %td
+          = link_to rating.rater.username, [rating.rater, :ratings]
+          rated
+          = link_to rating.book.title, rating.book
+          = "#{rating.stars.to_i} / 5"
+          .pull-right= "#{time_ago_in_words(rating.created_at)} ago"
+          - if current_user.admin?
+            = link_to "Edit", edit_rating_path(rating)
