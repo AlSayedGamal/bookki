@@ -1,9 +1,15 @@
 class BooksController < ApplicationController
   before_filter :authenticate_user!
+  before_filter :authorize_admin!, only: [:edit, :update, :destroy ]
   # GET /books
   # GET /books.json
   def index
-    @books = (params[:user_id].present?) ? User.books.find(params[:user_id]).page(params[:page]) : Book.page(params[:page])
+    if params[:user_id].present?
+      @user = User.find(params[:user_id])
+      @books =  @user.books
+    else
+      @books = Book.page(params[:page])
+    end
 
     respond_to do |format|
       format.html # index.html.haml

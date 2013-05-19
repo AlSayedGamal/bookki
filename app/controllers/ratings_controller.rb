@@ -1,5 +1,6 @@
 class RatingsController < ApplicationController
   before_filter :authenticate_user!
+  before_filter :authorize_admin!, only: [:edit, :update, :destroy ]
   
   def index
     @ratings = (params[:user_id].present?) ? Rate.where(rater_id: params[:user_id]) : Rate.all(order: "created_at desc")
