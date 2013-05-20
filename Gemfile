@@ -43,6 +43,7 @@ gem 'jquery-rails'
 gem 'debugger'
 
 group :test do
+  gem 'simplecov',           '~> 0.7.1', :require => false
   gem 'cucumber',            '1.2.5'
   gem 'cucumber-rails',      '1.3.1', require: false
   gem 'database_cleaner'
