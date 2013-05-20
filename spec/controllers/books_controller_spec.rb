@@ -11,8 +11,15 @@ describe BooksController do
       @book2 = FactoryGirl.create :book
     end
     it "successful request" do
+      Book.should_receive(:page).and_return([@book1, @book2])
       get :index
       response.should be_success
+    end
+    it "should list only user readings" do
+      @book1.rate 3, @user.id, "rating"
+      get :index, {user_id: @user.id}
+      response.body.should have_content(@book1.title)
+      response.body.should_not have_content(@book2.title)
     end
     it "should select the books index template" do
       get :index
@@ -62,7 +69,7 @@ describe BooksController do
     end
 
     it "should submit to update" do
-      post :update, {id: @book1.id, isbn: "1122334455667", title: "Some new title"}
+      put :update, {id: @book1.id, isbn: "1122334455667", title: "Some new title"}
       response.should redirect_to book_path(@book1)
     end
 
