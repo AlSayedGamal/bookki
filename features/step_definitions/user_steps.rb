@@ -9,11 +9,13 @@ Given /^(?:I (have|am)|there (?:is|are)) the following users?$/ do |who, users_t
   users_table.map_headers! do |cell|
     cell.downcase.gsub(/\s/, '_').to_sym
   end
-
-  users_table.hashes.each do |user_hash|
-    user = create_user(user_hash)
-    @session_users[user.email] = user
-    @user = user if (who == 'am')
+  if users_table.hashes.count > 1
+    users_table.hashes.each do |user_hash|
+      user = create_user(user_hash)
+      @session_users[user.email] = user
+    end
+  else
+    @user = create_user(users_table.hashes.first)
   end
 end
 
@@ -23,7 +25,7 @@ end
 
 Given /^I am logged in$/ do
   visit path_for('login')
-
+  debugger
   fill_in 'Username', with: @user[:username]
   fill_in 'Password', with: @user[:plain_text_password]
   click_button 'Sign in'

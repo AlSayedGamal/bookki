@@ -13,9 +13,9 @@ def path_for(page_name)
     '/users/sign_out'
   # Need-related
   when /^new book$/i
-    '/books/new'
+    'books/new'
   when /^book with id (.*?)$/i
-    "/books/#{$1}"
+    "books/#{$1}"
   else
     raise "Undefined path for #{page_name} page"
   end
@@ -29,6 +29,8 @@ def selector_for_within(within_elm)
   case within_elm
   when 'book side bar'
     '.side-bar'
+  when 'main content area'
+    '.span9'
   else
     raise "Undefined selector for #{within_elm}"
   end

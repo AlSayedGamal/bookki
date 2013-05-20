@@ -44,8 +44,8 @@ gem 'debugger'
 
 group :test do
   gem 'simplecov',           '~> 0.7.1', :require => false
-  gem 'cucumber',            '1.2.5'
-  gem 'cucumber-rails',      '1.3.1', require: false
+  gem 'cucumber',            '~> 1.3.1'
+  gem 'cucumber-rails',      '~> 1.3.1'
   gem 'database_cleaner'
   gem 'factory_girl_rails',  '3.5.0'
   gem 'forgery',             '0.5.0'
