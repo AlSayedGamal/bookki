@@ -29,6 +29,8 @@ def selector_for_within(within_elm)
   case within_elm
   when 'book side bar'
     '.side-bar'
+  when 'book listing'
+    '.span9 table.table'
   when 'main content area'
     '.span9'
   else
