@@ -15,7 +15,7 @@ def path_for(page_name)
   when /^new book$/i
     '/books/new'
   when /^book with id (.*?)$/i
-    "/books/#{$1)}"
+    "/books/#{$1}"
   else
     raise "Undefined path for #{page_name} page"
   end
